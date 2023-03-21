@@ -20,13 +20,13 @@ int main(void)
 			putchar((i / 10) + '0');
 			putchar((i % 10) + '0');
 			putchar(' ');
-			putchar((i / 10) + '0');
+			putchar((x / 10) + '0');
 			putchar((x % 10) + '0');
 			if (i + x != 197)
 			{
 				putchar(',');
 				putchar(' ');
-			}	
+			}
 			x++;
 		}
 		i++;
