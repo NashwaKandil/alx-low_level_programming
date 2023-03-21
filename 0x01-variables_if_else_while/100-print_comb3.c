@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 /**
  * main - start
  *
@@ -9,10 +10,12 @@ int main(void)
 {
 	int i;
 	int x;
-	
+
+	i = 0;
+	x = 1;
 	for (i = 0; i <= 9; i++)
 	{
-		for (x = 0; x <= 9; x++)
+		for (x = 1; x <= 9; x++)
 		{
 			if (i < x && i != x)
 			{
