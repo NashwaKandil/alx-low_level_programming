@@ -16,28 +16,25 @@ void times_table(void)
 	v = 0;
 	while (i < 10)
 	{
+		x = i * v;
+		_putchar(x + '0');
+		v++;
 		while (v < 10)
 		{
 			x = i * v;
 			if (x < 10)
 			{
+				_putchar(',');
+				_putchar(' ');
+				_putchar(' ');
 				_putchar(x + '0');
-				if (v != 9)
-				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
-				}
 			}
 			else
 			{
+				_putchar(',');
+				_putchar(' ');
 				_putchar((x / 10) + '0');
 				_putchar((x % 10) + '0');
-				if (v != 9)
-				{
-					_putchar(',');
-					_putchar(' ');
-				}
 			}
 			v++;
 		}
