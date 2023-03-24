@@ -18,17 +18,12 @@ void more_numbers(void)
 	{
 		while (z < 15)
 		{
-			if (z < 10)
-			{
-				putchar(z + '0');
-				z++;
-			}
-			else
+			if (z > 9)
 			{
 				putchar((z / 10) + '0');
-				putchar((z % 10) + '0');
-				z++;
 			}
+			putchar((z % 10) + '0');
+			z++;
 		}
 		putchar('\n');
 		z = 0;
