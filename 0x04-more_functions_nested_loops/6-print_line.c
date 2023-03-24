@@ -18,6 +18,6 @@ void print_line(int n)
 			putchar('_');
 			n--;
 		}
+		putchar('\n');
 	}
-	putchar('\n');
 }
