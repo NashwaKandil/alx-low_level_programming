@@ -17,7 +17,11 @@ int main(void)
 		}
 		else if (x % 5 == 0)
 		{
-			printf("Buzz ");
+			printf("Buzz");
+			if (x != 100)
+			{
+				printf(" ");
+			}
 		}
 		else if (x % 3 == 0)
 		{
