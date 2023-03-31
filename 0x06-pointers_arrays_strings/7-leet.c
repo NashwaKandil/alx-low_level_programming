@@ -10,7 +10,9 @@ char *leet(char *n)
 {
 	int i;
 
-	for (i = 0 ; n[i] != '\0' ; i++)
+	i = 0;
+	while (n[i] != '\0')
+	{
 		if (n[i] == 'a' || n[i] == 'A')
 			n[i] = '4';
 		else if (n[i] == 'e' || n[i] == 'E')
@@ -21,7 +23,7 @@ char *leet(char *n)
 			n[i] = '7';
 		else if (n[i] == 'l' || n[i] == 'L')
 			n[i] = '1';
-		else
-			continue;
+		i++;
+	}
 	return (n);
 }
