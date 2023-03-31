@@ -21,5 +21,7 @@ char *leet(char *n)
 			n[i] = '7';
 		else if (n[i] == 'l' || n[i] == 'L')
 			n[i] = '1';
+		else
+			continue;
 	return (n);
 }
