@@ -9,7 +9,7 @@
  * Return: pointer or 0
  */
 
-char *argstostr(int ac, char **av)	
+char *argstostr(int ac, char **av)
 {
 	int i, n, r = 0, l = 0;
 	char *str;
@@ -33,9 +33,9 @@ char *argstostr(int ac, char **av)
 			r++;
 		}
 	}
-	if (str[r] == '\0')	
+	if (str[r] == '\0')
 	{
-		putchar('\n');
+		str[r++] = '\n';
 	}
 	return (str);
 }
