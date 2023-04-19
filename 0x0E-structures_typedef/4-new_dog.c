@@ -2,54 +2,84 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <stdio.h>
+
 /**
- * *new_dog - creates a new dog
- * @name: new name
- * @age: new age
- * @owner: new owner
- * Return: data or NULL
+ * _strlen - calculates the length of a string
+ * @s: string to evaluate
+ * Return: length of string
+ */
+
+int _strlen(char *s)
+{
+	int i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
+
+
+/**
+ * *_strcpy - copies the string pointed to by src
+ * to the buffer pointed to by dest
+ * @dest: pointer to the buffer in which we copy the string
+ * @src: string to be copied
+ * Return: pointer to dest
+ */
+
+char *_strcpy(char *dest, char *src)
+{
+	int len, i;
+
+	len = 0;
+	while (src[len] != '\0')
+	{
+		len++;
+	}
+	for (i = 0; i < len; i++)
+	{
+		dest[i] = src[i];
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
+/**
+ * new_dog - creates a new dog
+ * @name: name of the dog
+ * @age: age of the dog
+ * @owner: owner of the dog
+ * Return: pointer to the new dog or NULL
  */
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	int i, j;
-	dog_t *ptr;
-	char *cpyname, *cpyowner;
+	dog_t *dog;
+	int len1, len2;
 
-	ptr = malloc(sizeof(dog_t));
-	
-	i = 0;
-	while (name[i] != '\0')
-		i++;
-	ptr->name = malloc(sizeof(char) * (i + 1));
-	cpyname = malloc(sizeof(char) * (i + 1));
-	if (ptr->name == NULL)
+	len1 = _strlen(name);
+	len2 = _strlen(owner);
+	dog = malloc(sizeof(dog_t));
+	if (dog == NULL)
+		return (NULL);
+	dog->name = malloc(sizeof(char) * (len1 + 1));
+	if (dog->name == NULL)
 	{
-		free(ptr);
+		free(dog);
 		return (NULL);
 	}
-
-	j = 0;
-	while (owner[j] != '\0')
-		j++;
-	ptr->owner = malloc(sizeof(char) * (j + 1));
-	cpyowner = malloc(sizeof(char) * (j + 1));
-	if (ptr->owner == NULL)
+	dog->owner = malloc(sizeof(char) * (len2 + 1));
+	if (dog->owner == NULL)
 	{
-		free(ptr);
-		free(ptr->name);
+		free(dog);
+		free(dog->name);
 		return (NULL);
 	}
-
-	for (i = 0; name[i] != '\0'; i++)
-	       cpyname[i] = name[i];
-	ptr->name = cpyname;
-
-	for (j = 0; owner[j] != '\0'; j++)
-		cpyowner[j] = owner[j];
-	ptr->owner = cpyowner;
-
-	ptr->age = age;
-
-	return (ptr);
+	_strcpy(dog->name, name);
+	_strcpy(dog->owner, owner);
+	dog->age = age;
+	return (dog);
 }
