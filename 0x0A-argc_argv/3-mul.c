@@ -5,9 +5,9 @@
 /**
  * _atoi - converts string to integer
  * @s: string converted
- * Return: number converted from the string		
+ * Return: number converted from the string
  */
- 
+
 int _atoi(char *s)
 {
 	int a, b, n, l, f, dgt;
@@ -51,16 +51,16 @@ int _atoi(char *s)
 
 int main(int argc, char *argv[])
 {
-	int res, n1, n2;
+	int n1, n2, res;
 
-	if (argc < 3 || argc > 3)
+	if (argc > 3 || argc < 3)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	n1 = _atoi(argv[1]);
 	n2 = _atoi(argv[2]);
-	res = n1 * n2;
+	n1 = _atoi(argv[1]);
+	res = n2 * n1;
 	printf("%d\n", res);
 	return (0);
 }
