@@ -23,8 +23,8 @@ int num_check(char *s)
 
 /**
  * main - adds positive numbers
- * argc: arguments number
- * argv: arguments array
+ * @argc: no of arguments
+ * @argv: arguments array
  * Return: sum or 1 when error
  */
 
