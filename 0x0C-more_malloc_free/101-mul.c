@@ -39,11 +39,11 @@ int _isdigit(int ch)
 char *multiply_big_num(char *n1, char *n2)
 {
 	char *res;
-	int len1, len2, a, b, c, d;
+	int len1, len2, a, b, c;
 
-	len2 = _strlen(n2);
 	len1 = _strlen(n1);
-	res = malloc(a = d = len1 + len2);
+	len2 = _strlen(n2);
+	res = malloc(a = len1 + len2);
 	if (!res)
 	{
 		printf("Error\n"), exit(98);
@@ -57,8 +57,8 @@ char *multiply_big_num(char *n1, char *n2)
 			free(res);
 			printf("Error\n"), exit(98);
 		}
-		c = 0;
 		a = n1[len1] - '0';
+		c = 0;
 		for (len2 = _strlen(n2) - 1; len2 >= 0; len2--)
 		{
 			if (!_isdigit(n2[len2]))
@@ -66,8 +66,8 @@ char *multiply_big_num(char *n1, char *n2)
 				free(res);
 				printf("Error\n"), exit(98);
 			}
-			c += (a * b) +  res[len1 + len2 + 1];
 			b = n2[len2] - '0';
+			c += (a * b) +  res[len1 + len2 + 1];
 			res[len1 + len2 + 1] = c % 10;
 			c /= 10;
 		}
