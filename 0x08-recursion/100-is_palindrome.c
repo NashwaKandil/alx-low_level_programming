@@ -13,10 +13,10 @@ int is_palindrome(char *s)
 	if (*s != '\0')
 	{
 		is_palindrome(s + 1);
-		z = s;	
+		z = s;
 	}
+	z = s;
 	if (z == s)
 		return (1);
-	else
-		return (0);
+	return (0);
 }
