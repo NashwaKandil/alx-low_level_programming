@@ -19,7 +19,7 @@ int create_file(const char *filename, char *text_content)
 		while (text_content[ln] != '\0')
 			ln++;
 	}
-	fds = open(filename, O_CREAT | O_RDWR | O_TRUNC);
+	fds = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
 	w = write(fds, text_content, ln);
 	if (w == -1 || fds == -1)
 		return (-1);
